@@ -663,11 +663,11 @@
             }
 
             .hero {
-                padding: 8rem 1rem 12rem;
+                padding: 8rem 1rem 16rem;
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 3rem;
-                margin-bottom: 4rem;
+                gap: 4rem;
+                margin-bottom: 6rem;
             }
 
             .hero-content {
@@ -680,29 +680,53 @@
 
             .hero-content h1 {
                 font-size: 2.5rem;
-                margin-top: 2rem;
+                margin-top: 3rem;
             }
 
             .hero-content .description {
                 font-size: 1rem;
-                margin-bottom: 4rem;
+                margin-bottom: 5rem;
+                padding: 0 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 5rem;
+                margin-bottom: 6rem;
+                gap: 1.5rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                max-width: 280px;
+                padding: 1rem 2rem;
             }
 
             .section {
-                padding: 8rem 1rem 4rem;
+                padding: 10rem 1rem 6rem;
+                margin-top: 2rem;
+            }
+
+            .section:first-of-type {
+                margin-top: 4rem;
             }
 
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 4rem;
             }
 
             .profile-img {
-                width: 200px;
-                height: 200px;
+                width: 180px;
+                height: 180px;
             }
 
             .about-stats {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .skills-container {
@@ -715,20 +739,6 @@
 
             .experience-item {
                 padding-left: 60px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 4rem;
-                margin-bottom: 4rem;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                justify-content: center;
-                max-width: 300px;
             }
         }
     </style>
