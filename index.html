@@ -3,91 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> AYOUB MAHFOUD STUDENTE INFORMATICA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Ayoub Mahfoud - Sviluppatore Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-dark: #1d4ed8;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --dark-blue: #1e3a8a;
+            --neutral-50: #f8fafc;
+            --neutral-100: #f1f5f9;
+            --neutral-200: #e2e8f0;
+            --neutral-300: #cbd5e1;
+            --neutral-400: #94a3b8;
+            --neutral-500: #64748b;
+            --neutral-600: #475569;
+            --neutral-700: #334155;
+            --neutral-800: #1e293b;
+            --neutral-900: #0f172a;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --black: #0a0a0a;
-            --dark-grey: #1a1a1a;
-            --blood-red: #dc143c;
-            --fire-red: #ff0040;
-            --neon-red: #ff073a;
-            --electric-red: #ff1744;
-            --white: #ffffff;
-            --light-grey: #cccccc;
-            --shadow-red: 0 0 20px rgba(220, 20, 60, 0.8);
-            --shadow-fire: 0 0 30px rgba(255, 0, 64, 0.6);
-            --glow-red: 0 0 40px #ff073a;
-        }
-
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background: var(--black);
-            color: var(--white);
-            overflow-x: hidden;
-            cursor: crosshair;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-700);
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        /* MATRIX BACKGROUND EFFECT */
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 30%, rgba(220, 20, 60, 0.03) 31%, rgba(220, 20, 60, 0.03) 32%, transparent 33%),
-                linear-gradient(-45deg, transparent 30%, rgba(255, 0, 64, 0.02) 31%, rgba(255, 0, 64, 0.02) 32%, transparent 33%);
-            background-size: 20px 20px;
-            z-index: -1;
-            animation: matrixMove 20s linear infinite;
-        }
-
-        @keyframes matrixMove {
-            0% { transform: translateY(0) translateX(0); }
-            100% { transform: translateY(-20px) translateX(-20px); }
-        }
-
-        /* CYBER HEADER */
+        /* Header & Navigation */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
-            border-bottom: 2px solid var(--blood-red);
-            z-index: 9999;
-            padding: 0.5rem 0;
-            box-shadow: var(--shadow-red);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--neutral-200);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
         }
 
         .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--fire-red);
-            text-shadow: var(--glow-red);
-            animation: logoPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes logoPulse {
-            0%, 100% { text-shadow: var(--glow-red); }
-            50% { text-shadow: 0 0 60px #ff073a, 0 0 80px #ff073a; }
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
         }
 
         .nav-menu {
@@ -97,29 +81,30 @@
         }
 
         .nav-link {
-            color: var(--light-grey);
+            color: var(--neutral-600);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s ease;
             position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::before {
-            content: '> ';
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         .nav-link:hover {
-            color: var(--fire-red);
-            text-shadow: 0 0 10px var(--fire-red);
+            color: var(--primary-blue);
         }
 
-        .nav-link:hover::before {
-            opacity: 1;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .lang-switcher {
@@ -128,656 +113,538 @@
         }
 
         .lang-btn {
-            background: var(--dark-grey);
-            border: 1px solid var(--blood-red);
-            color: var(--white);
-            padding: 0.5rem;
-            border-radius: 4px;
+            background: none;
+            border: 1px solid var(--neutral-300);
+            color: var(--neutral-600);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--blood-red);
-            box-shadow: var(--shadow-red);
-            transform: scale(1.1);
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
         }
 
-        /* HERO SECTION - TAMARRO STYLE */
+        /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
+            padding: 8rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
             align-items: center;
-            justify-content: center;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(220, 20, 60, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 0, 64, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, var(--black) 0%, #1a0a0a 100%);
-            position: relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(220, 20, 60, 0.1) 2px, rgba(220, 20, 60, 0.1) 4px);
-            animation: scanlines 2s linear infinite;
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 1rem;
+            line-height: 1.1;
         }
 
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(4px); }
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-        }
-
-        .profile-container {
-            position: relative;
-            display: inline-block;
+        .hero-content .description {
+            font-size: 1.125rem;
+            color: var(--neutral-600);
             margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 0.875rem 2rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .profile-img {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--fire-red);
-            box-shadow: 
-                var(--shadow-fire),
-                inset 0 0 20px rgba(255, 0, 64, 0.3);
-            animation: profileGlow 3s ease-in-out infinite;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 1.5rem;
         }
 
-        @keyframes profileGlow {
-            0%, 100% { 
-                box-shadow: var(--shadow-fire), inset 0 0 20px rgba(255, 0, 64, 0.3);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 50px #ff073a, 0 0 70px #dc143c, inset 0 0 30px rgba(255, 0, 64, 0.5);
-                transform: scale(1.05);
-            }
-        }
-
-        .hacker-frame {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
-            border: 2px solid var(--blood-red);
-            border-radius: 50%;
-            animation: rotate 10s linear infinite;
-        }
-
-        .hacker-frame::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px dashed var(--fire-red);
-            border-radius: 50%;
-            animation: rotate 8s linear infinite reverse;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--fire-red);
-            text-shadow: 
-                0 0 10px var(--fire-red),
-                0 0 20px var(--fire-red),
-                0 0 30px var(--fire-red);
-            margin-bottom: 1rem;
-            letter-spacing: 4px;
-            animation: titleGlitch 4s ease-in-out infinite;
-        }
-
-        @keyframes titleGlitch {
-            0%, 90%, 100% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: var(--light-grey);
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .hero .tagline {
-            font-size: 1.2rem;
-            color: var(--blood-red);
-            margin-bottom: 3rem;
-            font-style: italic;
-            animation: blink 2s ease-in-out infinite;
-        }
-
-        @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0.7; }
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
+        .social-links {
+            display: flex;
             gap: 1rem;
-            padding: 1.5rem 3rem;
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
-            color: var(--white);
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-600);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 2px solid var(--fire-red);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
+        .social-link:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-fire);
-            text-shadow: 0 0 10px var(--white);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        /* SECTIONS TAMARRO STYLE */
+        /* Sections */
         .section {
-            padding: 6rem 0;
-            max-width: 1400px;
+            padding: 6rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            position: relative;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
         }
 
         .section-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 3rem;
-            font-weight: 900;
-            text-align: center;
-            color: var(--fire-red);
-            text-shadow: var(--glow-red);
-            margin-bottom: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--blood-red);
-            box-shadow: var(--shadow-red);
-        }
-
-        /* ABOUT SECTION */
-        .about-content {
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(26, 26, 26, 0.8) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
-            padding: 3rem;
-            text-align: center;
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--light-grey);
-            box-shadow: var(--shadow-red);
-            position: relative;
-        }
-
-        .about-content::before {
-            content: '>> LOADING PROFILE...';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--black);
-            color: var(--fire-red);
-            padding: 0 1rem;
-            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
             font-weight: 700;
-            font-size: 0.9rem;
+            color: var(--neutral-900);
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        /* SKILLS TAMARRO */
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--neutral-600);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--neutral-600);
+        }
+
+        .about-text h3 {
+            color: var(--neutral-900);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--neutral-50);
+            border-radius: 12px;
+            border: 1px solid var(--neutral-200);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--neutral-600);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .skill-category {
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
-            padding: 2.5rem;
-            position: relative;
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
 
-        .skill-category::before {
-            content: attr(data-category);
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--black);
-            color: var(--fire-red);
-            padding: 0 1rem;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
         .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-fire);
-            border-color: var(--fire-red);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
         .skill-category h3 {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.8rem;
-            color: var(--fire-red);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-category i {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
         }
 
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--fire-red);
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-blue);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .skill-tag:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-red);
-            text-shadow: 0 0 10px var(--white);
+            background: var(--primary-blue);
+            color: var(--white);
         }
 
-        /* PROJECTS TAMARRO */
+        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(26, 26, 26, 0.9) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '>> PROJECT FILE';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--fire-red);
-            color: var(--white);
-            padding: 0.3rem 0.8rem;
-            font-family: 'Orbitron', monospace;
-            font-size: 0.8rem;
-            border-radius: 3px;
-            z-index: 2;
         }
 
         .project-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: var(--shadow-fire);
-            border-color: var(--fire-red);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
         }
 
         .project-image {
-            height: 250px;
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             color: var(--white);
-            text-shadow: 0 0 20px var(--white);
+            font-size: 3rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 20px);
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-content {
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .project-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--fire-red);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--neutral-900);
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .project-description {
-            color: var(--light-grey);
-            margin-bottom: 2rem;
+            color: var(--neutral-600);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
-            font-size: 1.1rem;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .tech-tag {
-            background: var(--black);
-            color: var(--fire-red);
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--blood-red);
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
+            background: var(--neutral-100);
+            color: var(--neutral-700);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        /* EXPERIENCE TIMELINE TAMARRO */
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .project-link:hover {
+            color: var(--primary-blue-dark);
+        }
+
+        /* Experience Section */
         .experience-timeline {
             position: relative;
-            padding-left: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .experience-timeline::before {
             content: '';
             position: absolute;
-            left: 0;
+            left: 30px;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--blood-red) 0%, var(--fire-red) 100%);
-            box-shadow: var(--shadow-red);
+            width: 2px;
+            background: var(--neutral-200);
         }
 
         .experience-item {
             position: relative;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.05) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
-            padding: 2.5rem;
-            margin-left: 3rem;
-            transition: all 0.3s ease;
+            padding-left: 80px;
         }
 
         .experience-item::before {
             content: '';
             position: absolute;
-            left: -4.5rem;
-            top: 2rem;
-            width: 20px;
-            height: 20px;
+            left: 21px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: var(--fire-red);
-            border: 3px solid var(--black);
-            box-shadow: var(--shadow-red);
+            background: var(--primary-blue);
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px var(--neutral-200);
         }
 
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-fire);
+        .experience-content {
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
         }
 
         .experience-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--fire-red);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--primary-blue);
+            font-weight: 500;
             margin-bottom: 1rem;
-            text-transform: uppercase;
         }
 
         .experience-description {
-            color: var(--light-grey);
+            color: var(--neutral-600);
             line-height: 1.6;
-            font-size: 1.1rem;
         }
 
-        /* CONTACT TAMARRO - FIXED VERSION */
+        /* Contact Section */
         .contact-container {
             display: grid;
-            /* SOLUZIONE: ridurre il minimo e usare 1fr per entrambe le colonne */
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: start;
         }
 
         .contact-form {
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
-            padding: 3rem;
-            position: relative;
-        }
-
-        .contact-form::before {
-            content: '>> SECURE CONNECTION';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--black);
-            color: var(--fire-red);
-            padding: 0 1rem;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            font-size: 0.9rem;
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--fire-red);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'Orbitron', monospace;
+            color: var(--neutral-700);
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            background: var(--black);
-            border: 2px solid var(--blood-red);
-            border-radius: 5px;
-            color: var(--white);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            padding: 0.875rem;
+            border: 1px solid var(--neutral-300);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--fire-red);
-            box-shadow: var(--shadow-red);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
-            color: var(--white);
-            border: 2px solid var(--fire-red);
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', monospace;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-fire);
-            text-shadow: 0 0 10px var(--white);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .contact-info {
-            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
-            border: 2px solid var(--blood-red);
-            border-radius: 10px;
-            padding: 3rem;
-            position: relative;
+            background: var(--neutral-50);
+            border-radius: 12px;
+            padding: 2rem;
         }
 
-        .contact-info::before {
-            content: '>> CONTACT PROTOCOLS';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--black);
-            color: var(--fire-red);
-            padding: 0 1rem;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            font-size: 0.9rem;
+        .contact-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: 1.5rem;
         }
 
         .contact-links {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .contact-link {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            color: var(--light-grey);
+            gap: 1rem;
+            color: var(--neutral-600);
             text-decoration: none;
-            padding: 1.5rem;
-            border: 2px solid var(--blood-red);
+            padding: 1rem;
             border-radius: 8px;
-            background: var(--black);
             transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 1.1rem;
         }
 
         .contact-link:hover {
-            color: var(--fire-red);
-            border-color: var(--fire-red);
-            box-shadow: var(--shadow-red);
-            transform: translateX(10px);
+            background: var(--white);
+            color: var(--primary-blue);
         }
 
         .contact-link i {
-            font-size: 2rem;
-            color: var(--fire-red);
-        }
-
-        /* FOOTER TAMARRO */
-        .footer {
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
-            border-top: 2px solid var(--blood-red);
-            padding: 3rem 0;
+            width: 20px;
             text-align: center;
-            color: var(--light-grey);
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: var(--primary-blue);
         }
 
-        /* RESPONSIVE - MIGLIORATO */
+        /* Footer */
+        .footer {
+            background: var(--neutral-50);
+            border-top: 1px solid var(--neutral-200);
+            padding: 2rem;
+            text-align: center;
+            color: var(--neutral-600);
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
         }
 
@@ -785,435 +652,654 @@
             .nav-menu {
                 display: none;
             }
-            
-            .hero h1 {
+
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
-            
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .profile-img {
                 width: 200px;
                 height: 200px;
             }
-            
-            .section {
-                padding: 4rem 1rem;
+
+            .about-stats {
+                grid-template-columns: 1fr;
             }
-            
-            .skills-container,
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
+
+            .experience-item {
+                padding-left: 60px;
             }
-        }
 
-        /* EXTRA TAMARRO EFFECTS */
-        .cyber-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--fire-red);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            box-shadow: var(--shadow-red);
-            transition: transform 0.1s ease;
-        }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        /* SCROLL INDICATOR */
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--blood-red), var(--fire-red));
-            z-index: 9998;
-            transition: width 0.3s ease;
-            box-shadow: var(--shadow-red);
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- MATRIX BACKGROUND -->
-    <div class="matrix-bg"></div>
-    
-    <!-- SCROLL INDICATOR -->
-    <div class="scroll-indicator" id="scrollIndicator"></div>
-    
-    <!-- CYBER CURSOR -->
-    <div class="cyber-cursor" id="cyberCursor"></div>
-
-    <!-- HEADER -->
+    <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo">🔥 AM 🔥</div>
+            <a href="#home" class="logo">Ayoub Mahfoud</a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link" data-key="nav-home">HOME</a></li>
-                    <li><a href="#about" class="nav-link" data-key="nav-about">PROFILO</a></li>
-                    <li><a href="#skills" class="nav-link" data-key="nav-skills">SKILLS</a></li>
-                    <li><a href="#projects" class="nav-link" data-key="nav-projects">PROGETTI</a></li>
-                    <li><a href="#experience" class="nav-link" data-key="nav-experience">ESPERIENZA</a></li>
-                    <li><a href="#contact" class="nav-link" data-key="nav-contact">CONTATTI</a></li>
+                    <li><a href="#home" class="nav-link" data-key="nav-home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-key="nav-about">Chi Sono</a></li>
+                    <li><a href="#skills" class="nav-link" data-key="nav-skills">Competenze</a></li>
+                    <li><a href="#projects" class="nav-link" data-key="nav-projects">Progetti</a></li>
+                    <li><a href="#experience" class="nav-link" data-key="nav-experience">Esperienza</a></li>
+                    <li><a href="#contact" class="nav-link" data-key="nav-contact">Contatti</a></li>
                 </ul>
             </nav>
             <div class="lang-switcher">
-                <button class="lang-btn active" data-lang="it">&#127470;&#127481;</button>
-                <button class="lang-btn" data-lang="en">&#127468;&#127463;</button>
-                <button class="lang-btn" data-lang="fr">&#127467;&#127479;</button>
+                <button class="lang-btn active" data-lang="it">IT</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="profile-container">
-                <div class="hacker-frame"></div>
-                <img src="img/profile.jpg" alt="Ayoub Mahfoud" class="profile-img">
-            </div>
-            <h1>AYOUB MAHFOUD</h1>
-            <p class="subtitle" data-key="hero-subtitle">🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥</p>
-            <p class="tagline" data-key="hero-tagline">"SEMPRE IN APPRENDIMENTO, SEMPRE IN CRESCITA"</p>
-            <a href="#projects" class="cta-button">
-                <span data-key="hero-cta">SCOPRI I MIEI PROGETTI</span>
-                <i class="fas fa-code"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
-        <h2 class="section-title" data-key="about-title">🔥 CHI SONO 🔥</h2>
-        <div class="about-content">
-            <p data-key="about-text">
-                NOME: AYOUB MAHFOUD 🔥<br><br>
-                LIVELLO: STUDENTE INFORMATICA @ UPO UNIVERSITY 🚀<br>
-                FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>
-                BACKGROUND: Attraverso le mie esperienze in logistica e ristorazione, 
-                ho sviluppato skills di PROBLEM SOLVING avanzato e lavoro di squadra 
-                eccellente. Ora sono concentrato nell'apprendere e perfezionare 
-                TUTTE le competenze informatiche! 🔥<br><br>
-                OBIETTIVO: SPECIALIZZARMI IN CYBERSECURITY! 🛡️🚀
+            <h1>Ayoub Mahfoud</h1>
+            <p class="subtitle" data-key="hero-subtitle">Studente di Informatica</p>
+            <p class="description" data-key="hero-description">
+                Appassionato di tecnologia con focus su sviluppo web, cybersecurity e innovazione digitale. 
+                Attualmente studente presso l'Università del Piemonte Orientale con esperienza pratica 
+                nello sviluppo di applicazioni web moderne.
             </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary">
+                    <span data-key="hero-cta-projects">Vedi Progetti</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <span data-key="hero-cta-contact">Contattami</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="profile-section">
+            <img src="img/profile.jpg" alt="Ayoub Mahfoud" class="profile-img">
+            <div class="social-links">
+                <a href="https://github.com/AyoubMahfoud" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ayoub-mahfoud-08089537a/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:ayoubmahfoud6@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title" data-key="about-title">Chi Sono</h2>
+        <p class="section-subtitle" data-key="about-subtitle">
+            Studente universitario con una passione per l'innovazione tecnologica e lo sviluppo software
+        </p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-key="about-intro-title">Il Mio Percorso</h3>
+                <p data-key="about-intro-text">
+                    Sono uno studente di Informatica presso l'Università del Piemonte Orientale dal 2021, 
+                    con un background in Biotecnologie Sanitarie ottenuto presso l'Istituto Tecnico Industriale 
+                    "Giuseppe Omar" di Novara. Questa formazione multidisciplinare mi ha fornito una solida 
+                    base scientifica e analitica, che ora applico allo sviluppo software e alla cybersecurity.
+                </p>
+                <br>
+                <p data-key="about-goals-text">
+                    Il mio obiettivo è specializzarmi in cybersecurity e sviluppo software, 
+                    combinando competenze tecniche solide con una mentalità orientata alla risoluzione dei problemi. 
+                    Sono sempre alla ricerca di nuove sfide che mi permettano di crescere professionalmente 
+                    e contribuire a progetti innovativi.
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <span class="stat-number">2021</span>
+                    <span class="stat-label" data-key="stat-started">Anno di Inizio Studi</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label" data-key="stat-languages">Linguaggi di Programmazione</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label" data-key="stat-projects">Progetti Completati</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label" data-key="stat-experience">Anni di Esperienza Lavorativa</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
     <section id="skills" class="section">
-        <h2 class="section-title" data-key="skills-title">🔥 ARSENAL DIGITALE 🔥</h2>
+        <h2 class="section-title" data-key="skills-title">Competenze Tecniche</h2>
+        <p class="section-subtitle" data-key="skills-subtitle">
+            Le tecnologie e gli strumenti che utilizzo per creare soluzioni innovative
+        </p>
         <div class="skills-container">
-            <div class="skill-category" data-category="WEAPONS">
-                <h3 data-key="technical-skills">ARMI TECNICHE</h3>
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i><span data-key="languages-title">Linguaggi di Programmazione</span></h3>
                 <div class="skill-list">
                     <span class="skill-tag">C</span>
-                    <span class="skill-tag">JAVA</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">HTML5</span>
                     <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JAVASCRIPT</span>
                     <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">NODE.JS</span>
-                    <span class="skill-tag">ASP.NET</span>
-                    <span class="skill-tag">GIT</span>
-                    <span class="skill-tag">SQLITE</span>
-                    <span class="skill-tag" data-key="web-dev">WEB DEV</span>
-                    <span class="skill-tag" data-key="networks">NETWORKS</span>
-                    <span class="skill-tag" data-key="security">CYBERSECURITY</span>
-                    <span class="skill-tag" data-key="database">DATABASE</span>
                 </div>
             </div>
-            <div class="skill-category" data-category="POWERS">
-                <h3 data-key="soft-skills">POTERI SPECIALI</h3>
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i><span data-key="frameworks-title">Framework & Tecnologie</span></h3>
                 <div class="skill-list">
-                    <span class="skill-tag" data-key="problem-solving">PROBLEM KILLER</span>
-                    <span class="skill-tag" data-key="communication">COMMUNICATION</span>
-                    <span class="skill-tag" data-key="adaptability">ADAPTABILITY</span>
-                    <span class="skill-tag" data-key="teamwork">TEAM SYNC</span>
-                    <span class="skill-tag" data-key="leadership">LEADERSHIP</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code"></i><span data-key="areas-title">Aree di Interesse</span></h3>
+                <div class="skill-list">
+                    <span class="skill-tag" data-key="web-development">Web Development</span>
+                    <span class="skill-tag" data-key="cybersecurity">Cybersecurity</span>
+                    <span class="skill-tag" data-key="databases">Database Design</span>
+                    <span class="skill-tag" data-key="networks">Reti Informatiche</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-users"></i><span data-key="soft-skills-title">Competenze Trasversali</span></h3>
+                <div class="skill-list">
+                    <span class="skill-tag" data-key="problem-solving">Problem Solving</span>
+                    <span class="skill-tag" data-key="teamwork">Lavoro di Squadra</span>
+                    <span class="skill-tag" data-key="time-management">Gestione del Tempo</span>
+                    <span class="skill-tag" data-key="adaptability">Adattabilità</span>
+                    <span class="skill-tag" data-key="communication">Comunicazione</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- Projects Section -->
     <section id="projects" class="section">
-        <h2 class="section-title" data-key="projects-title">🔥 I MIEI PROGETTI 🔥</h2>
+        <h2 class="section-title" data-key="projects-title">I Miei Progetti</h2>
+        <p class="section-subtitle" data-key="projects-subtitle">
+            Una raccolta dei progetti su cui ho lavorato, dimostrando le mie competenze tecniche
+        </p>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-image">
-    <img src="img/cinebinge.png" alt="CineBinge Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
-</div>
+                    <img src="img/cinebinge.png" alt="CineBinge Project" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="project-content">
-                    <h3 class="project-title">CINEBINGE</h3>
+                    <h3 class="project-title">CineBinge</h3>
                     <p class="project-description" data-key="cinebinge-description">
-                        🔥 STREAMING PLATFORM COMPLETA 🔥<br>
-                        Web app POTENTE ispirata alle piattaforme di streaming! 
-                        Sistema di ricerca films AVANZATO, autenticazione SICURA, 
-                        interfaccia MODERNA. Login system ROBUSTO, 
-                        gestione sessioni PERFETTA, area personale PREMIUM. 
-                        Design responsive che funziona ovunque! 🚀
+                        Piattaforma di streaming completa sviluppata con tecnologie web moderne. 
+                        Include sistema di autenticazione, ricerca avanzata, gestione utenti e interfaccia responsive. 
+                        Il progetto dimostra competenze in full-stack development e design UX/UI.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JAVASCRIPT</span>
-                        <span class="tech-tag">NODE.JS</span>
-                        <span class="tech-tag">SQLITE</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">SQLite</span>
                     </div>
-                    <a href="https://github.com/TheWolf0105/Piattaforma-Cinebinge-" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, var(--blood-red), var(--fire-red)); color: white; text-decoration: none; border-radius: 25px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease;">
-                        <i class="fab fa-github"></i> VEDI SU GITHUB
-                    </a>
+                    <div class="project-links">
+                        <a href="https://github.com/AyoubMahfoud/Piattaforma-Cinebinge-" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span data-key="view-code">Vedi Codice</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-image">
-                    🚀
+                    <img src="img/portfolio.png" alt="Portfolio Project" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title" data-key="future-project">PROSSIME MISSIONI</h3>
-                    <p class="project-description" data-key="future-project-description">
-                        🔥 PROSSIMI PROGETTI IN ARRIVO... 🔥<br>
-                        Spazio riservato per i prossimi progetti FANTASTICI! 
-                        Sempre in cerca di nuove sfide tecnologiche da RISOLVERE e 
-                        opportunità per migliorare le mie skills di programmazione 
-                        in progetti che faranno la differenza! 🚀
+                    <h3 class="project-title" data-key="portfolio-title">Portfolio Personale</h3>
+                    <p class="project-description" data-key="portfolio-description">
+                        Sito web portfolio professionale sviluppato con HTML5, CSS3 e JavaScript. 
+                        Design responsive e moderno, ottimizzato per performance e accessibilità. 
+                        Include sistema di traduzione multilingue e animazioni fluide.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag" data-key="coming-soon">COMING SOON...</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/AyoubMahfoud/ayoubmahfoud.github.io" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span data-key="view-code">Vedi Codice</span>
+                        </a>
+                        <a href="https://ayoubmahfoud.github.io" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-key="view-live">Vedi Live</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title" data-key="future-projects">Progetti Futuri</h3>
+                    <p class="project-description" data-key="future-description">
+                        Spazio dedicato ai prossimi progetti in sviluppo. Attualmente sto lavorando 
+                        su applicazioni che integrano cybersecurity, machine learning e sviluppo web avanzato. 
+                        Resta aggiornato per vedere le prossime innovazioni!
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag" data-key="coming-soon">In Arrivo...</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
+    <!-- Experience Section -->
     <section id="experience" class="section">
-        <h2 class="section-title" data-key="experience-title">⚡ LA MIA ESPERIENZA ⚡</h2>
+        <h2 class="section-title" data-key="experience-title">Esperienza Professionale</h2>
+        <p class="section-subtitle" data-key="experience-subtitle">
+            Il mio percorso lavorativo che ha contribuito alla mia crescita professionale
+        </p>
         <div class="experience-timeline">
             <div class="experience-item">
-                <h3 class="experience-title" data-key="pizza-chef">🔥 PIZZAIOLO PART-TIME 🔥</h3>
-                <p class="experience-description" data-key="pizza-description">
-                    🔥 GESTIONE PROFESSIONALE DELLA CUCINA! 🔥<br>
-                    Gestione EFFICIENTE della kitchen, controllo qualità ACCURATO, 
-                    rispetto dei tempi PRECISO. Skills di multitasking AVANZATE, 
-                    lavoro sotto pressione ECCELLENTE, attenzione ai dettagli MANIACALE. 
-                    Esperienza che mi ha insegnato disciplina e precisione! 🍕
-                </p>
+                <div class="experience-content">
+                    <h3 class="experience-title" data-key="current-studies">Studi Universitari in Informatica</h3>
+                    <p class="experience-company" data-key="university-name">Università del Piemonte Orientale - 2021/Presente</p>
+                    <p class="experience-description" data-key="studies-description">
+                        Corso di Laurea in Informatica con focus su programmazione, algoritmi, strutture dati, 
+                        reti informatiche e cybersecurity. Precedente diploma in Biotecnologie Sanitarie presso 
+                        l'ITI "Giuseppe Omar" di Novara, che mi ha fornito competenze analitiche e metodologiche trasversali.
+                    </p>
+                </div>
             </div>
+            
             <div class="experience-item">
-                <h3 class="experience-title">🚴 DELIVEROO & GLOVO RIDER 🚴</h3>
-                <p class="experience-description" data-key="delivery-description">
-                    ⚡ DELIVERY PROFESSIONALE E VELOCE! ⚡<br>
-                    Servizio delivery EFFICIENTE con focus sulla soddisfazione 
-                    clienti e ottimizzazione percorsi INTELLIGENTE. Gestione del tempo 
-                    OTTIMALE e problem solving in situazioni DINAMICHE. 
-                    Esperienza che ha migliorato le mie soft skills! 🚀
-                </p>
+                <div class="experience-content">
+                    <h3 class="experience-title" data-key="pizza-chef-title">Pizzaiolo Part-time</h3>
+                    <p class="experience-company" data-key="restaurant-work">Pizzeria Centro, Novara - Apr 2024/Presente</p>
+                    <p class="experience-description" data-key="pizza-description">
+                        Gestione efficiente della cucina con focus su qualità e tempistiche. 
+                        Sviluppo di competenze in multitasking, lavoro sotto pressione e 
+                        coordinamento del team. Esperienza che ha rafforzato le mie capacità 
+                        organizzative e di problem solving.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title" data-key="delivery-title">Rider Delivery</h3>
+                    <p class="experience-company" data-key="delivery-companies">Deliveroo & Glovo, Novara - 2019/Presente</p>
+                    <p class="experience-description" data-key="delivery-description">
+                        Servizio di consegna professionale con ottimizzazione dei percorsi 
+                        e focus sulla soddisfazione del cliente. Gestione autonoma del tempo 
+                        e risoluzione rapida di problematiche logistiche. Esperienza pluriennale 
+                        che ha migliorato le mie soft skills e capacità di adattamento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-content">
+                    <h3 class="experience-title" data-key="diploma-title">Diploma in Biotecnologie Sanitarie</h3>
+                    <p class="experience-company" data-key="school-name">ITI "Giuseppe Omar", Novara - 2017/2021</p>
+                    <p class="experience-description" data-key="diploma-description">
+                        Diploma in Biotecnologie Sanitarie e Chimica dei Materiali conseguito con votazione 70/100. 
+                        Formazione tecnico-scientifica che ha sviluppato competenze analitiche, metodologiche 
+                        e di laboratorio, creando una solida base per l'approccio sistematico ai problemi 
+                        che ora applico nello sviluppo software.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
-        <h2 class="section-title" data-key="contact-title">🔥 CONNESSIONE DIRETTA 🔥</h2>
+        <h2 class="section-title" data-key="contact-title">Contattami</h2>
+        <p class="section-subtitle" data-key="contact-subtitle">
+            Interessato a collaborare o hai domande? Non esitare a contattarmi
+        </p>
         <div class="contact-container">
             <div class="contact-form">
                 <form action="https://formspree.io/f/xblkbzgg" method="POST">
-    <!-- Input nascosti per Formspree -->
-    <input type="hidden" name="_subject" value="Nuovo messaggio dal Portfolio di Ayoub">
-    <input type="hidden" name="_next" value="https://yoursite.com/thanks.html">
-    <!-- Protezione anti-spam -->
-    <input type="hidden" name="_captcha" value="false">
-    
-    <div class="form-group">
-        <label for="name" data-key="form-name">NOME CODICE</label>
-        <input type="text" id="name" name="name" required placeholder="Inserisci il tuo handle...">
-    </div>
-    <div class="form-group">
-        <label for="email" data-key="form-email">EMAIL CONTACT</label>
-        <input type="email" id="email" name="email" required placeholder="La tua email sicura...">
-    </div>
-    <div class="form-group">
-        <label for="message" data-key="form-message">MESSAGGIO CIFRATO</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Scrivi il tuo messaggio qui..."></textarea>
-    </div>
-    <button type="submit" class="submit-btn" data-key="form-submit">🔥 INVIA MESSAGGIO 🔥</button>
-</form>
+                    <input type="hidden" name="_subject" value="Nuovo messaggio dal Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="form-group">
+                        <label for="name" data-key="form-name">Nome</label>
+                        <input type="text" id="name" name="name" required placeholder="Il tuo nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-key="form-email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="La tua email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-key="form-subject">Oggetto</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Oggetto del messaggio">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-key="form-message">Messaggio</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Scrivi il tuo messaggio..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">
+                        <span data-key="form-submit">Invia Messaggio</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
             <div class="contact-info">
+                <h3 data-key="contact-info-title">Informazioni di Contatto</h3>
                 <div class="contact-links">
                     <a href="mailto:ayoubmahfoud6@gmail.com" class="contact-link">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <div data-key="email-label">EMAIL</div>
-                            <div>ayoubmahfoud6@gmail.com</div>
+                            <strong>Email</strong><br>
+                            ayoubmahfoud6@gmail.com
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/ayoub-mahfoud-08089537a/" class="contact-link" target="_blank">
                         <i class="fab fa-linkedin"></i>
                         <div>
-                            <div>LINKEDIN</div>
-                            <div>/in/ayoub-mahfoud</div>
+                            <strong>LinkedIn</strong><br>
+                            Ayoub Mahfoud
                         </div>
                     </a>
                     <a href="https://github.com/AyoubMahfoud" class="contact-link" target="_blank">
                         <i class="fab fa-github"></i>
                         <div>
-                            <div>GITHUB PROFILE</div>
-                            <div>/AyoubMahfoud</div>
+                            <strong>GitHub</strong><br>
+                            @AyoubMahfoud
                         </div>
                     </a>
+                    <div class="contact-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong data-key="location-label">Posizione</strong><br>
+                            <span data-key="location">Piemonte, Italia</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="footer">
-        <p data-key="footer-text">🔥 2024 AYOUB MAHFOUD - STUDENTE INFORMATICA - ALL RIGHTS RESERVED 🔥</p>
+        <p data-key="footer-text">© 2024 Ayoub Mahfoud. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
-        // TRADUZIONI FINALI - VERSIONE CORRETTA
+        // Traduzioni per il sistema multilingue
         const translations = {
             it: {
-                'nav-home': 'HOME',
-                'nav-about': 'PROFILO',
-                'nav-skills': 'SKILLS',
-                'nav-projects': 'PROGETTI',
-                'nav-experience': 'ESPERIENZA',
-                'nav-contact': 'CONTATTI',
-                'hero-subtitle': '🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥',
-                'hero-tagline': '"SEMPRE IN APPRENDIMENTO, SEMPRE IN CRESCITA"',
-                'hero-cta': 'SCOPRI I MIEI PROGETTI',
-                'about-title': '🔥 CHI SONO 🔥',
-                'about-text': 'NOME: AYOUB MAHFOUD 🔥<br><br>LIVELLO: STUDENTE INFORMATICA @ UPO UNIVERSITY 🚀<br>FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>BACKGROUND: Attraverso le mie esperienze in logistica e ristorazione, ho sviluppato skills di PROBLEM SOLVING avanzato e lavoro di squadra eccellente. Ora sono concentrato nell\'apprendere e perfezionare TUTTE le competenze informatiche! 🔥<br><br>OBIETTIVO: SPECIALIZZARMI IN CYBERSECURITY! 🛡️🚀',
-                'skills-title': '🔥 ARSENAL DIGITALE 🔥',
-                'technical-skills': 'ARMI TECNICHE',
-                'soft-skills': 'POTERI SPECIALI',
-                'web-dev': 'WEB DEV',
-                'networks': 'NETWORKS',
-                'security': 'CYBERSECURITY',
-                'database': 'DATABASE',
-                'problem-solving': 'PROBLEM KILLER',
-                'time-management': 'TIME MASTER',
-                'communication': 'COMMUNICATION',
-                'adaptability': 'ADAPTABILITY',
-                'teamwork': 'TEAM SYNC',
-                'leadership': 'LEADERSHIP',
-                'projects-title': '🔥 I MIEI PROGETTI 🔥',
-                'cinebinge-description': '🔥 STREAMING PLATFORM COMPLETA 🔥<br>Web app POTENTE ispirata alle piattaforme di streaming! Sistema di ricerca films AVANZATO, autenticazione SICURA, interfaccia MODERNA. Login system ROBUSTO, gestione sessioni PERFETTA, area personale PREMIUM. Design responsive che funziona ovunque! 🚀',
-                'future-project': 'PROSSIME MISSIONI',
-                'future-project-description': '🔥 PROSSIMI PROGETTI IN ARRIVO... 🔥<br>Spazio riservato per i prossimi progetti FANTASTICI! Sempre in cerca di nuove sfide tecnologiche da RISOLVERE e opportunità per migliorare le mie skills di programmazione in progetti che faranno la differenza! 🚀',
-                'coming-soon': 'COMING SOON...',
-                'experience-title': '⚡ LA MIA ESPERIENZA ⚡',
-                'pizza-chef': '🔥 PIZZAIOLO PART-TIME 🔥',
-                'pizza-description': '🔥 GESTIONE PROFESSIONALE DELLA CUCINA! 🔥<br>Gestione EFFICIENTE della kitchen, controllo qualità ACCURATO, rispetto dei tempi PRECISO. Skills di multitasking AVANZATE, lavoro sotto pressione ECCELLENTE, attenzione ai dettagli MANIACALE. Esperienza che mi ha insegnato disciplina e precisione! 🍕',
-                'delivery-description': '⚡ DELIVERY PROFESSIONALE E VELOCE! ⚡<br>Servizio delivery EFFICIENTE con focus sulla soddisfazione clienti e ottimizzazione percorsi INTELLIGENTE. Gestione del tempo OTTIMALE e problem solving in situazioni DINAMICHE. Esperienza che ha migliorato le mie soft skills! 🚀',
-                'contact-title': '🔥 CONNESSIONE DIRETTA 🔥',
-                'form-name': 'NOME CODICE',
-                'form-email': 'EMAIL CONTACT',
-                'form-message': 'MESSAGGIO CIFRATO',
-                'form-submit': '🔥 INVIA MESSAGGIO 🔥',
-                'email-label': 'EMAIL',
-                'footer-text': '🔥 2024 AYOUB MAHFOUD - STUDENTE INFORMATICA - ALL RIGHTS RESERVED 🔥'
+                'nav-home': 'Home',
+                'nav-about': 'Chi Sono',
+                'nav-skills': 'Competenze',
+                'nav-projects': 'Progetti',
+                'nav-experience': 'Esperienza',
+                'nav-contact': 'Contatti',
+                'hero-subtitle': 'Studente di Informatica',
+                'hero-description': 'Appassionato di tecnologia con focus su sviluppo web, cybersecurity e innovazione digitale. Attualmente studente presso l\'Università del Piemonte Orientale con esperienza pratica nello sviluppo di applicazioni web moderne.',
+                'hero-cta-projects': 'Vedi Progetti',
+                'hero-cta-contact': 'Contattami',
+                'about-title': 'Chi Sono',
+                'about-subtitle': 'Studente universitario con una passione per l\'innovazione tecnologica e lo sviluppo software',
+                'about-intro-title': 'Il Mio Percorso',
+                'about-intro-text': 'Sono uno studente di Informatica presso l\'Università del Piemonte Orientale dal 2021, con un background in Biotecnologie Sanitarie ottenuto presso l\'Istituto Tecnico Industriale "Giuseppe Omar" di Novara. Questa formazione multidisciplinare mi ha fornito una solida base scientifica e analitica, che ora applico allo sviluppo software e alla cybersecurity.',
+                'about-goals-text': 'Il mio obiettivo è specializzarmi in cybersecurity e sviluppo software, combinando competenze tecniche solide con una mentalità orientata alla risoluzione dei problemi. Sono sempre alla ricerca di nuove sfide che mi permettano di crescere professionalmente e contribuire a progetti innovativi.',
+                'stat-started': 'Anno di Inizio Studi',
+                'stat-languages': 'Linguaggi di Programmazione',
+                'stat-projects': 'Progetti Completati',
+                'stat-experience': 'Anni di Esperienza Lavorativa',
+                'skills-title': 'Competenze Tecniche',
+                'skills-subtitle': 'Le tecnologie e gli strumenti che utilizzo per creare soluzioni innovative',
+                'languages-title': 'Linguaggi di Programmazione',
+                'frameworks-title': 'Framework & Tecnologie',
+                'areas-title': 'Aree di Interesse',
+                'soft-skills-title': 'Competenze Trasversali',
+                'web-development': 'Web Development',
+                'cybersecurity': 'Cybersecurity',
+                'databases': 'Database Design',
+                'networks': 'Reti Informatiche',
+                'problem-solving': 'Problem Solving',
+                'teamwork': 'Lavoro di Squadra',
+                'time-management': 'Gestione del Tempo',
+                'adaptability': 'Adattabilità',
+                'communication': 'Comunicazione',
+                'projects-title': 'I Miei Progetti',
+                'projects-subtitle': 'Una raccolta dei progetti su cui ho lavorato, dimostrando le mie competenze tecniche',
+                'cinebinge-description': 'Piattaforma di streaming completa sviluppata con tecnologie web moderne. Include sistema di autenticazione, ricerca avanzata, gestione utenti e interfaccia responsive. Il progetto dimostra competenze in full-stack development e design UX/UI.',
+                'portfolio-title': 'Portfolio Personale',
+                'portfolio-description': 'Sito web portfolio professionale sviluppato con HTML5, CSS3 e JavaScript. Design responsive e moderno, ottimizzato per performance e accessibilità. Include sistema di traduzione multilingue e animazioni fluide.',
+                'future-projects': 'Progetti Futuri',
+                'future-description': 'Spazio dedicato ai prossimi progetti in sviluppo. Attualmente sto lavorando su applicazioni che integrano cybersecurity, machine learning e sviluppo web avanzato. Resta aggiornato per vedere le prossime innovazioni!',
+                'coming-soon': 'In Arrivo...',
+                'view-code': 'Vedi Codice',
+                'view-live': 'Vedi Live',
+                'experience-title': 'Esperienza Professionale',
+                'experience-subtitle': 'Il mio percorso lavorativo che ha contribuito alla mia crescita professionale',
+                'current-studies': 'Studi Universitari in Informatica',
+                'university-name': 'Università del Piemonte Orientale - 2021/Presente',
+                'studies-description': 'Corso di Laurea in Informatica con focus su programmazione, algoritmi, strutture dati, reti informatiche e cybersecurity. Precedente diploma in Biotecnologie Sanitarie presso l\'ITI "Giuseppe Omar" di Novara, che mi ha fornito competenze analitiche e metodologiche trasversali.',
+                'pizza-chef-title': 'Pizzaiolo Part-time',
+                'restaurant-work': 'Pizzeria Centro, Novara - Apr 2024/Presente',
+                'pizza-description': 'Gestione efficiente della cucina con focus su qualità e tempistiche. Sviluppo di competenze in multitasking, lavoro sotto pressione e coordinamento del team. Esperienza che ha rafforzato le mie capacità organizzative e di problem solving.',
+                'delivery-title': 'Rider Delivery',
+                'delivery-companies': 'Deliveroo & Glovo, Novara - 2019/Presente',
+                'delivery-description': 'Servizio di consegna professionale con ottimizzazione dei percorsi e focus sulla soddisfazione del cliente. Gestione autonoma del tempo e risoluzione rapida di problematiche logistiche. Esperienza pluriennale che ha migliorato le mie soft skills e capacità di adattamento.',
+                'diploma-title': 'Diploma in Biotecnologie Sanitarie',
+                'school-name': 'ITI "Giuseppe Omar", Novara - 2017/2021',
+                'diploma-description': 'Diploma in Biotecnologie Sanitarie e Chimica dei Materiali conseguito con votazione 70/100. Formazione tecnico-scientifica che ha sviluppato competenze analitiche, metodologiche e di laboratorio, creando una solida base per l\'approccio sistematico ai problemi che ora applico nello sviluppo software.',
+                'contact-title': 'Contattami',
+                'contact-subtitle': 'Interessato a collaborare o hai domande? Non esitare a contattarmi',
+                'contact-info-title': 'Informazioni di Contatto',
+                'form-name': 'Nome',
+                'form-email': 'Email',
+                'form-subject': 'Oggetto',
+                'form-message': 'Messaggio',
+                'form-submit': 'Invia Messaggio',
+                'location-label': 'Posizione',
+                'location': 'Piemonte, Italia',
+                'footer-text': '© 2024 Ayoub Mahfoud. Tutti i diritti riservati.'
             },
             en: {
-                'nav-home': 'HOME',
-                'nav-about': 'PROFILE',
-                'nav-skills': 'SKILLS',
-                'nav-projects': 'PROJECTS',
-                'nav-experience': 'EXPERIENCE',
-                'nav-contact': 'CONTACT',
-                'hero-subtitle': '🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥',
-                'hero-tagline': '"ALWAYS LEARNING, ALWAYS GROWING"',
-                'hero-cta': 'DISCOVER MY PROJECTS',
-                'about-title': '🔥 WHO I AM 🔥',
-                'about-text': 'NAME: AYOUB MAHFOUD 🔥<br><br>LEVEL: COMPUTER SCIENCE STUDENT @ UPO UNIVERSITY 🚀<br>FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>BACKGROUND: Through my experiences in logistics and food service, I developed advanced PROBLEM SOLVING skills and excellent teamwork. Now I\'m focused on learning and perfecting ALL computer science skills! 🔥<br><br>GOAL: SPECIALIZE IN CYBERSECURITY! 🛡️🚀',
-                'skills-title': '🔥 DIGITAL ARSENAL 🔥',
-                'technical-skills': 'TECHNICAL WEAPONS',
-                'soft-skills': 'SPECIAL POWERS',
-                'web-dev': 'WEB DEV',
-                'networks': 'NETWORKS',
-                'security': 'CYBERSECURITY',
-                'database': 'DATABASE',
-                'problem-solving': 'PROBLEM KILLER',
-                'time-management': 'TIME MASTER',
-                'communication': 'COMMUNICATION',
-                'adaptability': 'ADAPTABILITY',
-                'teamwork': 'TEAM SYNC',
-                'leadership': 'LEADERSHIP',
-                'projects-title': '🔥 MY PROJECTS 🔥',
-                'cinebinge-description': '🔥 COMPLETE STREAMING PLATFORM 🔥<br>POWERFUL web app inspired by streaming platforms! ADVANCED movie search system, SECURE authentication, MODERN interface. ROBUST login system, PERFECT session management, PREMIUM personal area. Responsive design that works everywhere! 🚀',
-                'future-project': 'NEXT MISSIONS',
-                'future-project-description': '🔥 UPCOMING PROJECTS... 🔥<br>Space reserved for upcoming FANTASTIC projects! Always looking for new technological challenges to SOLVE and opportunities to improve my programming skills in projects that will make a difference! 🚀',
-                'coming-soon': 'COMING SOON...',
-                'experience-title': '⚡ MY EXPERIENCE ⚡',
-                'pizza-chef': '🔥 PART-TIME PIZZA CHEF 🔥',
-                'pizza-description': '🔥 PROFESSIONAL KITCHEN MANAGEMENT! 🔥<br>EFFICIENT kitchen management, ACCURATE quality control, PRECISE timing. ADVANCED multitasking skills, EXCELLENT work under pressure, MANIACAL attention to detail. Experience that taught me discipline and precision! 🍕',
-                'delivery-description': '⚡ PROFESSIONAL AND FAST DELIVERY! ⚡<br>EFFICIENT delivery service with focus on customer satisfaction and INTELLIGENT route optimization. OPTIMAL time management and problem solving in DYNAMIC situations. Experience that improved my soft skills! 🚀',
-                'contact-title': '🔥 DIRECT CONNECTION 🔥',
-                'form-name': 'CODE NAME',
-                'form-email': 'EMAIL CONTACT',
-                'form-message': 'ENCRYPTED MESSAGE',
-                'form-submit': '🔥 SEND MESSAGE 🔥',
-                'email-label': 'EMAIL',
-                'footer-text': '🔥 2024 AYOUB MAHFOUD - COMPUTER SCIENCE STUDENT - ALL RIGHTS RESERVED 🔥'
+                'nav-home': 'Home',
+                'nav-about': 'About',
+                'nav-skills': 'Skills',
+                'nav-projects': 'Projects',
+                'nav-experience': 'Experience',
+                'nav-contact': 'Contact',
+                'hero-subtitle': 'Computer Science Student',
+                'hero-description': 'Technology enthusiast focused on web development, cybersecurity and digital innovation. Currently studying at University of Eastern Piedmont with practical experience in modern web application development.',
+                'hero-cta-projects': 'View Projects',
+                'hero-cta-contact': 'Contact Me',
+                'about-title': 'About Me',
+                'about-subtitle': 'University student with a passion for technological innovation and software development',
+                'about-intro-title': 'My Journey',
+                'about-intro-text': 'I am a Computer Science student at the University of Eastern Piedmont since 2021, with a background in Health Biotechnology obtained at the Technical Industrial Institute "Giuseppe Omar" in Novara. This multidisciplinary training provided me with a solid scientific and analytical foundation, which I now apply to software development and cybersecurity.',
+                'about-goals-text': 'My goal is to specialize in cybersecurity and software development, combining solid technical skills with a problem-solving mindset. I am always looking for new challenges that allow me to grow professionally and contribute to innovative projects.',
+                'stat-started': 'Study Start Year',
+                'stat-languages': 'Programming Languages',
+                'stat-projects': 'Completed Projects',
+                'stat-experience': 'Years of Work Experience',
+                'skills-title': 'Technical Skills',
+                'skills-subtitle': 'The technologies and tools I use to create innovative solutions',
+                'languages-title': 'Programming Languages',
+                'frameworks-title': 'Frameworks & Technologies',
+                'areas-title': 'Areas of Interest',
+                'soft-skills-title': 'Soft Skills',
+                'web-development': 'Web Development',
+                'cybersecurity': 'Cybersecurity',
+                'databases': 'Database Design',
+                'networks': 'Computer Networks',
+                'problem-solving': 'Problem Solving',
+                'teamwork': 'Teamwork',
+                'time-management': 'Time Management',
+                'adaptability': 'Adaptability',
+                'communication': 'Communication',
+                'projects-title': 'My Projects',
+                'projects-subtitle': 'A collection of projects I\'ve worked on, showcasing my technical skills',
+                'cinebinge-description': 'Complete streaming platform developed with modern web technologies. Includes authentication system, advanced search, user management and responsive interface. The project demonstrates full-stack development and UX/UI design skills.',
+                'portfolio-title': 'Personal Portfolio',
+                'portfolio-description': 'Professional portfolio website developed with HTML5, CSS3 and JavaScript. Modern and responsive design, optimized for performance and accessibility. Includes multilingual translation system and smooth animations.',
+                'future-projects': 'Future Projects',
+                'future-description': 'Space dedicated to upcoming projects in development. Currently working on applications that integrate cybersecurity, machine learning and advanced web development. Stay tuned for upcoming innovations!',
+                'coming-soon': 'Coming Soon...',
+                'view-code': 'View Code',
+                'view-live': 'View Live',
+                'experience-title': 'Professional Experience',
+                'experience-subtitle': 'My career path that has contributed to my professional growth',
+                'current-studies': 'University Studies in Computer Science',
+                'university-name': 'University of Eastern Piedmont - 2021/Present',
+                'studies-description': 'Computer Science Degree with focus on programming, algorithms, data structures, computer networks and cybersecurity. Previous diploma in Health Biotechnology at ITI "Giuseppe Omar" in Novara, which provided me with analytical and methodological cross-cutting skills.',
+                'pizza-chef-title': 'Part-time Pizza Chef',
+                'restaurant-work': 'Pizzeria Centro, Novara - Apr 2024/Present',
+                'pizza-description': 'Efficient kitchen management with focus on quality and timing. Development of multitasking skills, working under pressure and team coordination. Experience that strengthened my organizational and problem-solving skills.',
+                'delivery-title': 'Delivery Rider',
+                'delivery-companies': 'Deliveroo & Glovo, Novara - 2019/Present',
+                'delivery-description': 'Professional delivery service with route optimization and focus on customer satisfaction. Autonomous time management and quick resolution of logistical issues. Multi-year experience that improved my soft skills and adaptability.',
+                'diploma-title': 'Diploma in Health Biotechnology',
+                'school-name': 'ITI "Giuseppe Omar", Novara - 2017/2021',
+                'diploma-description': 'Diploma in Health Biotechnology and Materials Chemistry achieved with grade 70/100. Technical-scientific training that developed analytical, methodological and laboratory skills, creating a solid foundation for the systematic approach to problems that I now apply in software development.',
+                'contact-title': 'Contact Me',
+                'contact-subtitle': 'Interested in collaborating or have questions? Don\'t hesitate to contact me',
+                'contact-info-title': 'Contact Information',
+                'form-name': 'Name',
+                'form-email': 'Email',
+                'form-subject': 'Subject',
+                'form-message': 'Message',
+                'form-submit': 'Send Message',
+                'location-label': 'Location',
+                'location': 'Piedmont, Italy',
+                'footer-text': '© 2024 Ayoub Mahfoud. All rights reserved.'
             },
             fr: {
-                'nav-home': 'ACCUEIL',
-                'nav-about': 'PROFIL',
-                'nav-skills': 'COMPÉTENCES',
-                'nav-projects': 'PROJETS',
-                'nav-experience': 'EXPÉRIENCE',
-                'nav-contact': 'CONTACT',
-                'hero-subtitle': '🔥 DÉVELOPPEUR • CODEUR • PASSIONNÉ TECH 🔥',
-                'hero-tagline': '"TOUJOURS EN APPRENTISSAGE, TOUJOURS EN CROISSANCE"',
-                'hero-cta': 'DÉCOUVRIR MES PROJETS',
-                'about-title': '🔥 QUI JE SUIS 🔥',
-                'about-text': 'NOM: AYOUB MAHFOUD 🔥<br><br>NIVEAU: ÉTUDIANT INFORMATIQUE @ UNIVERSITÉ UPO 🚀<br>FOCUS: DÉVELOPPEMENT LOGICIEL • DÉVELOPPEMENT WEB • CYBERSÉCURITÉ<br><br>BACKGROUND: À travers mes expériences en logistique et restauration, j\'ai développé des compétences de RÉSOLUTION DE PROBLÈMES avancées et un excellent travail d\'équipe. Maintenant je me concentre sur l\'apprentissage et le perfectionnement de TOUTES les compétences informatiques! 🔥<br><br>OBJECTIF: ME SPÉCIALISER EN CYBERSÉCURITÉ! 🛡️🚀',
-                'skills-title': '🔥 ARSENAL NUMÉRIQUE 🔥',
-                'technical-skills': 'ARMES TECHNIQUES',
-                'soft-skills': 'POUVOIRS SPÉCIAUX',
-                'web-dev': 'DEV WEB',
-                'networks': 'RÉSEAUX',
-                'security': 'CYBERSÉCURITÉ',
-                'database': 'BASE DONNÉES',
-                'problem-solving': 'TUEUR PROBLÈMES',
-                'time-management': 'MAÎTRE TEMPS',
-                'communication': 'COMMUNICATION',
-                'adaptability': 'ADAPTABILITÉ',
-                'teamwork': 'SYNC ÉQUIPE',
-                'leadership': 'LEADERSHIP',
-                'projects-title': '🔥 MES PROJETS 🔥',
-                'cinebinge-description': '🔥 PLATEFORME STREAMING COMPLÈTE 🔥<br>App web PUISSANTE inspirée des plateformes streaming! Système recherche films AVANCÉ, authentification SÉCURISÉE, interface MODERNE. Système login ROBUSTE, gestion sessions PARFAITE, espace personnel PREMIUM. Design responsive qui fonctionne partout! 🚀',
-                'future-project': 'PROCHAINES MISSIONS',
-                'future-project-description': '🔥 PROJETS À VENIR... 🔥<br>Espace réservé pour les prochains projets FANTASTIQUES! Toujours en quête de nouveaux défis technologiques à RÉSOUDRE et opportunités pour améliorer mes compétences de programmation dans des projets qui feront la différence! 🚀',
-                'coming-soon': 'BIENTÔT DISPONIBLE...',
-                'experience-title': '⚡ MON EXPÉRIENCE ⚡',
-                'pizza-chef': '🔥 PIZZAIOLO À TEMPS PARTIEL 🔥',
-                'pizza-description': '🔥 GESTION PROFESSIONNELLE CUISINE! 🔥<br>Gestion EFFICACE de la cuisine, contrôle qualité PRÉCIS, respect timing EXACT. Compétences multitâche AVANCÉES, travail sous pression EXCELLENT, attention détails MANIAQUE. Expérience qui m\'a appris discipline et précision! 🍕',
-                'delivery-description': '⚡ LIVRAISON PROFESSIONNELLE ET RAPIDE! ⚡<br>Service livraison EFFICACE avec focus sur satisfaction client et optimisation trajets INTELLIGENTE. Gestion temps OPTIMALE et résolution problèmes en situations DYNAMIQUES. Expérience qui a amélioré mes soft skills! 🚀',
-                'contact-title': '🔥 CONNEXION DIRECTE 🔥',
-                'form-name': 'NOM DE CODE',
-                'form-email': 'CONTACT EMAIL',
-                'form-message': 'MESSAGE CHIFFRÉ',
-                'form-submit': '🔥 ENVOYER MESSAGE 🔥',
-                'email-label': 'EMAIL',
-                'footer-text': '🔥 2024 AYOUB MAHFOUD - ÉTUDIANT INFORMATIQUE - TOUS DROITS RÉSERVÉS 🔥'
+                'nav-home': 'Accueil',
+                'nav-about': 'À Propos',
+                'nav-skills': 'Compétences',
+                'nav-projects': 'Projets',
+                'nav-experience': 'Expérience',
+                'nav-contact': 'Contact',
+                'hero-subtitle': 'Étudiant en Informatique',
+                'hero-description': 'Passionné de technologie avec un focus sur le développement web, la cybersécurité et l\'innovation numérique. Actuellement étudiant à l\'Université du Piémont Oriental avec une expérience pratique dans le développement d\'applications web modernes.',
+                'hero-cta-projects': 'Voir Projets',
+                'hero-cta-contact': 'Me Contacter',
+                'about-title': 'À Propos de Moi',
+                'about-subtitle': 'Étudiant universitaire passionné par l\'innovation technologique et le développement logiciel',
+                'about-intro-title': 'Mon Parcours',
+                'about-intro-text': 'Je suis étudiant en Informatique à l\'Université du Piémont Oriental depuis 2021, avec un background en Biotechnologies Sanitaires obtenu à l\'Institut Technique Industriel "Giuseppe Omar" de Novara. Cette formation multidisciplinaire m\'a fourni une base scientifique et analytique solide, que j\'applique maintenant au développement logiciel et à la cybersécurité.',
+                'about-goals-text': 'Mon objectif est de me spécialiser en cybersécurité et développement logiciel, en combinant des compétences techniques solides avec un état d\'esprit orienté résolution de problèmes. Je suis toujours à la recherche de nouveaux défis qui me permettent de grandir professionnellement et de contribuer à des projets innovants.',
+                'stat-started': 'Année de Début d\'Études',
+                'stat-languages': 'Langages de Programmation',
+                'stat-projects': 'Projets Terminés',
+                'stat-experience': 'Années d\'Expérience Professionnelle',
+                'skills-title': 'Compétences Techniques',
+                'skills-subtitle': 'Les technologies et outils que j\'utilise pour créer des solutions innovantes',
+                'languages-title': 'Langages de Programmation',
+                'frameworks-title': 'Frameworks & Technologies',
+                'areas-title': 'Domaines d\'Intérêt',
+                'soft-skills-title': 'Compétences Transversales',
+                'web-development': 'Développement Web',
+                'cybersecurity': 'Cybersécurité',
+                'databases': 'Conception Base de Données',
+                'networks': 'Réseaux Informatiques',
+                'problem-solving': 'Résolution de Problèmes',
+                'teamwork': 'Travail d\'Équipe',
+                'time-management': 'Gestion du Temps',
+                'adaptability': 'Adaptabilité',
+                'communication': 'Communication',
+                'projects-title': 'Mes Projets',
+                'projects-subtitle': 'Une collection de projets sur lesquels j\'ai travaillé, démontrant mes compétences techniques',
+                'cinebinge-description': 'Plateforme de streaming complète développée avec des technologies web modernes. Inclut système d\'authentification, recherche avancée, gestion utilisateurs et interface responsive. Le projet démontre des compétences en développement full-stack et design UX/UI.',
+                'portfolio-title': 'Portfolio Personnel',
+                'portfolio-description': 'Site web portfolio professionnel développé avec HTML5, CSS3 et JavaScript. Design moderne et responsive, optimisé pour la performance et l\'accessibilité. Inclut système de traduction multilingue et animations fluides.',
+                'future-projects': 'Projets Futurs',
+                'future-description': 'Espace dédié aux prochains projets en développement. Actuellement je travaille sur des applications qui intègrent cybersécurité, machine learning et développement web avancé. Restez à l\'écoute pour voir les prochaines innovations!',
+                'coming-soon': 'Bientôt Disponible...',
+                'view-code': 'Voir Code',
+                'view-live': 'Voir Live',
+                'experience-title': 'Expérience Professionnelle',
+                'experience-subtitle': 'Mon parcours professionnel qui a contribué à ma croissance professionnelle',
+                'current-studies': 'Études Universitaires en Informatique',
+                'university-name': 'Université du Piémont Oriental - 2021/Présent',
+                'studies-description': 'Licence en Informatique avec focus sur programmation, algorithmes, structures de données, réseaux informatiques et cybersécurité. Précédent diplôme en Biotechnologies Sanitaires à l\'ITI "Giuseppe Omar" de Novara, qui m\'a fourni des compétences analytiques et méthodologiques transversales.',
+                'pizza-chef-title': 'Pizzaiolo à Temps Partiel',
+                'restaurant-work': 'Pizzeria Centro, Novara - Avr 2024/Présent',
+                'pizza-description': 'Gestion efficace de la cuisine avec focus sur qualité et timing. Développement de compétences en multitâche, travail sous pression et coordination d\'équipe. Expérience qui a renforcé mes capacités organisationnelles et de résolution de problèmes.',
+                'delivery-title': 'Livreur',
+                'delivery-companies': 'Deliveroo & Glovo, Novara - 2019/Présent',
+                'delivery-description': 'Service de livraison professionnel avec optimisation des trajets et focus sur la satisfaction client. Gestion autonome du temps et résolution rapide de problématiques logistiques. Expérience pluriannuelle qui a amélioré mes soft skills et capacité d\'adaptation.',
+                'diploma-title': 'Diplôme en Biotechnologies Sanitaires',
+                'school-name': 'ITI "Giuseppe Omar", Novara - 2017/2021',
+                'diploma-description': 'Diplôme en Biotechnologies Sanitaires et Chimie des Matériaux obtenu avec note 70/100. Formation technique-scientifique qui a développé des compétences analytiques, méthodologiques et de laboratoire, créant une base solide pour l\'approche systématique aux problèmes que j\'applique maintenant dans le développement logiciel.',
+                'contact-title': 'Me Contacter',
+                'contact-subtitle': 'Intéressé par une collaboration ou vous avez des questions? N\'hésitez pas à me contacter',
+                'contact-info-title': 'Informations de Contact',
+                'form-name': 'Nom',
+                'form-email': 'Email',
+                'form-subject': 'Sujet',
+                'form-message': 'Message',
+                'form-submit': 'Envoyer Message',
+                'location-label': 'Localisation',
+                'location': 'Piémont, Italie',
+                'footer-text': '© 2024 Ayoub Mahfoud. Tous droits réservés.'
             }
         };
 
-        // SISTEMA LINGUA FUNZIONANTE
+        // Sistema di traduzione
         let currentLang = 'it';
 
         function changeLanguage(lang) {
             currentLang = lang;
-            
-            console.log('Cambio lingua a:', lang);
             
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
@@ -1234,75 +1320,259 @@
 
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM caricato, inizializzando eventi lingua...');
-            
+            // Language switcher
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    //e.preventDefault();
+                btn.addEventListener('click', function() {
                     const lang = this.getAttribute('data-lang');
-                    console.log('Cliccato bottone lingua:', lang);
                     changeLanguage(lang);
                 });
             });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = 'none';
+                }
+            });
+
+            // Form submission
+            document.querySelector('form').addEventListener('submit', function(e) {
+                // Lascia che Formspree gestisca l'invio reale
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
+                submitBtn.disabled = true;
+                
+                // Per la demo, commenta la riga seguente se usi Formspree reale
+                e.preventDefault();
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Messaggio Inviato!';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        this.reset();
+                    }, 2000);
+                }, 1500);
+            });
+
+            // Intersection Observer per animazioni
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Osserva elementi per animazioni
+            document.querySelectorAll('.skill-category, .project-card, .experience-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         });
 
-        // CYBER CURSOR
-        const cursor = document.getElementById('cyberCursor');
-        if (cursor) {
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX - 10 + 'px';
-                cursor.style.top = e.clientY - 10 + 'px';
-            });
+        // Typing effect per il titolo principale
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function typing() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            typing();
         }
 
-        // SCROLL INDICATOR
-        window.addEventListener('scroll', () => {
-            const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            const indicator = document.getElementById('scrollIndicator');
-            if (indicator) {
-                indicator.style.width = scrolled + '%';
+        // Attiva effetto typing al caricamento
+        window.addEventListener('load', function() {
+            const title = document.querySelector('.hero-content h1');
+            const originalText = title.textContent;
+            typeWriter(title, originalText, 150);
+        });
+
+        // Parallax effect leggero per l'hero
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
 
-        // SMOOTH SCROLL
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-               // e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Mobile menu toggle (per future implementazioni)
+        const createMobileMenu = () => {
+            const header = document.querySelector('.header');
+            const nav = document.querySelector('.nav-menu');
+            
+            if (window.innerWidth <= 768) {
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    const mobileBtn = document.createElement('button');
+                    mobileBtn.className = 'mobile-menu-btn';
+                    mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileBtn.style.cssText = `
+                        background: none;
+                        border: none;
+                        color: var(--primary-blue);
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        display: block;
+                    `;
+                    
+                    mobileBtn.addEventListener('click', () => {
+                        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                        nav.style.position = 'absolute';
+                        nav.style.top = '100%';
+                        nav.style.left = '0';
+                        nav.style.right = '0';
+                        nav.style.backgroundColor = 'white';
+                        nav.style.flexDirection = 'column';
+                        nav.style.padding = '1rem';
+                        nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    });
+                    
+                    header.querySelector('.nav-container').appendChild(mobileBtn);
                 }
+            }
+        };
+
+        window.addEventListener('resize', createMobileMenu);
+        createMobileMenu();
+
+        // Skills animation al scroll
+        const animateSkills = () => {
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach((tag, index) => {
+                setTimeout(() => {
+                    tag.style.opacity = '1';
+                    tag.style.transform = 'scale(1)';
+                }, index * 100);
+            });
+        };
+
+        // Inizializza animazioni skills
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.style.opacity = '0';
+            tag.style.transform = 'scale(0.8)';
+            tag.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+
+        // Observer per skills
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkills();
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            skillsObserver.observe(skillsSection);
+        }
+
+        // Aggiunge effetto hover per i progetti
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-4px) scale(1)';
             });
         });
 
-        // FORM SUBMISSION - VERSIONE CORRETTA PER FORMSPREE
-        document.querySelector('form').addEventListener('submit', function(e) {
-            // NON bloccare il submit se usi Formspree reale
-            // e.preventDefault(); // COMMENTA QUESTA RIGA per Formspree
+        // Counter animation per le statistiche
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 50);
+            });
+        };
+
+        // Observer per le statistiche
+        const statsSection = document.querySelector('.about-stats');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
             
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
+            statsObserver.observe(statsSection);
+        }
+
+        // Gestione form validation
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input, textarea');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.required) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#10b981';
+                }
+            });
             
-            // Solo animazione visiva, non bloccare l'invio
-            submitBtn.innerHTML = '🔥 INVIO IN CORSO... 🔥';
-            submitBtn.disabled = true;
-            
-            // Se vuoi fare una demo senza Formspree, decomenta la riga sotto
-            //e.preventDefault();
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = '✅ MESSAGGIO INVIATO! ✅';
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1500);
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary-blue)';
+            });
         });
 
-        // KONAMI CODE EASTER EGG
+        // Easter egg: Konami code
         let konamiCode = [];
-        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
         
         document.addEventListener('keydown', (e) => {
             konamiCode.push(e.keyCode);
@@ -1311,31 +1581,62 @@
             }
             
             if (konamiCode.join('') === konamiSequence.join('')) {
-                document.body.style.animation = 'titleGlitch 0.5s infinite';
-                alert('🔥 KONAMI CODE ACTIVATED! DEVELOPER MODE UNLOCKED! 🔥');
+                // Easter egg attivato
+                document.body.style.filter = 'hue-rotate(180deg)';
                 setTimeout(() => {
-                    document.body.style.animation = '';
+                    document.body.style.filter = 'none';
+                }, 3000);
+                
+                // Mostra messaggio
+                const message = document.createElement('div');
+                message.textContent = '🎉 Developer Mode Activated! 🎉';
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--primary-blue);
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    z-index: 10000;
+                    animation: pulse 0.5s infinite;
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    document.body.removeChild(message);
                 }, 3000);
             }
         });
 
-        // CONSOLE DEVELOPER MESSAGE
+        // Messaggio console per developer
         console.log(`
-        🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        🔥                                     🔥
-        🔥    AYOUB MAHFOUD DEVELOPER PORTFOLIO🔥
-        🔥           ACCESS GRANTED            🔥
-        🔥                                     🔥
-        🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        🚀 Ayoub Mahfoud - Portfolio Professionale
         
-        🚀 WELCOME TO MY CODE UNIVERSE 🚀
+        Grazie per aver ispezionato il mio codice!
+        
+        Background:
+        • Diploma ITI "Giuseppe Omar" - Biotecnologie Sanitarie (2017-2021)
+        • Laurea in Informatica UPO (2021-presente)
+        • Focus: Sviluppo Software & Cybersecurity
+        
+        Esperienza:
+        • Rider Deliveroo & Glovo (2019-presente)
+        • Pizzaiolo Pizzeria Centro (Apr 2024-presente)
+        
+        Stack utilizzato:
+        • HTML5 semantico
+        • CSS3 moderno con custom properties
+        • JavaScript vanilla per interazioni
+        • Design responsive e accessibile
+        • Animazioni fluide e performanti
+        
+        Contattami: ayoubmahfoud6@gmail.com
+        GitHub: github.com/AyoubMahfoud
+        LinkedIn: linkedin.com/in/ayoub-mahfoud-08089537a/
         `);
-</script>
+    </script>
 </body>
-
 </html>
-
-
-
-
-
