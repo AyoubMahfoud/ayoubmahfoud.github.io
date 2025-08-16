@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 AYOUB MAHFOUD 🔥 STUDENTE INFORMATICA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --blood-red: #dc143c;
+            --fire-red: #ff0040;
+            --neon-red: #ff073a;
+            --electric-red: #ff1744;
+            --white: #ffffff;
+            --light-grey: #cccccc;
+            --shadow-red: 0 0 20px rgba(220, 20, 60, 0.8);
+            --shadow-fire: 0 0 30px rgba(255, 0, 64, 0.6);
+            --glow-red: 0 0 40px #ff073a;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        /* MATRIX BACKGROUND EFFECT */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(220, 20, 60, 0.03) 31%, rgba(220, 20, 60, 0.03) 32%, transparent 33%),
+                linear-gradient(-45deg, transparent 30%, rgba(255, 0, 64, 0.02) 31%, rgba(255, 0, 64, 0.02) 32%, transparent 33%);
+            background-size: 20px 20px;
+            z-index: -1;
+            animation: matrixMove 20s linear infinite;
+        }
+
+        @keyframes matrixMove {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-20px) translateX(-20px); }
+        }
+
+        /* CYBER HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            border-bottom: 2px solid var(--blood-red);
+            z-index: 9999;
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-red);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--fire-red);
+            text-shadow: var(--glow-red);
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { text-shadow: var(--glow-red); }
+            50% { text-shadow: 0 0 60px #ff073a, 0 0 80px #ff073a; }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--light-grey);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::before {
+            content: '> ';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--fire-red);
+            text-shadow: 0 0 10px var(--fire-red);
+        }
+
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: var(--dark-grey);
+            border: 1px solid var(--blood-red);
+            color: var(--white);
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--blood-red);
+            box-shadow: var(--shadow-red);
+            transform: scale(1.1);
+        }
+
+        /* HERO SECTION - TAMARRO STYLE */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(220, 20, 60, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 64, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, var(--black) 0%, #1a0a0a 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(220, 20, 60, 0.1) 2px, rgba(220, 20, 60, 0.1) 4px);
+            animation: scanlines 2s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--fire-red);
+            box-shadow: 
+                var(--shadow-fire),
+                inset 0 0 20px rgba(255, 0, 64, 0.3);
+            animation: profileGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes profileGlow {
+            0%, 100% { 
+                box-shadow: var(--shadow-fire), inset 0 0 20px rgba(255, 0, 64, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 50px #ff073a, 0 0 70px #dc143c, inset 0 0 30px rgba(255, 0, 64, 0.5);
+                transform: scale(1.05);
+            }
+        }
+
+        .hacker-frame {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--blood-red);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .hacker-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px dashed var(--fire-red);
+            border-radius: 50%;
+            animation: rotate 8s linear infinite reverse;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--fire-red);
+            text-shadow: 
+                0 0 10px var(--fire-red),
+                0 0 20px var(--fire-red),
+                0 0 30px var(--fire-red);
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            animation: titleGlitch 4s ease-in-out infinite;
+        }
+
+        @keyframes titleGlitch {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--light-grey);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--blood-red);
+            margin-bottom: 3rem;
+            font-style: italic;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.7; }
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--fire-red);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-fire);
+            text-shadow: 0 0 10px var(--white);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* SECTIONS TAMARRO STYLE */
+        .section {
+            padding: 6rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            color: var(--fire-red);
+            text-shadow: var(--glow-red);
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--blood-red);
+            box-shadow: var(--shadow-red);
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(26, 26, 26, 0.8) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--light-grey);
+            box-shadow: var(--shadow-red);
+            position: relative;
+        }
+
+        .about-content::before {
+            content: '>> LOADING PROFILE...';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--black);
+            color: var(--fire-red);
+            padding: 0 1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* SKILLS TAMARRO */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category::before {
+            content: attr(data-category);
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--black);
+            color: var(--fire-red);
+            padding: 0 1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-fire);
+            border-color: var(--fire-red);
+        }
+
+        .skill-category h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: var(--fire-red);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--fire-red);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-red);
+            text-shadow: 0 0 10px var(--white);
+        }
+
+        /* PROJECTS TAMARRO */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(26, 26, 26, 0.9) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '>> PROJECT FILE';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--fire-red);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            z-index: 2;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: var(--shadow-fire);
+            border-color: var(--fire-red);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            text-shadow: 0 0 20px var(--white);
+            position: relative;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 20px);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--fire-red);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-description {
+            color: var(--light-grey);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--black);
+            color: var(--fire-red);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* EXPERIENCE TIMELINE TAMARRO */
+        .experience-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            box-shadow: var(--shadow-red);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.05) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-left: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -4.5rem;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--fire-red);
+            border: 3px solid var(--black);
+            box-shadow: var(--shadow-red);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-fire);
+        }
+
+        .experience-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--fire-red);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .experience-description {
+            color: var(--light-grey);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* CONTACT TAMARRO - FIXED VERSION */
+        .contact-container {
+            display: grid;
+            /* SOLUZIONE: ridurre il minimo e usare 1fr per entrambe le colonne */
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '>> SECURE CONNECTION';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--black);
+            color: var(--fire-red);
+            padding: 0 1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--fire-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--black);
+            border: 2px solid var(--blood-red);
+            border-radius: 5px;
+            color: var(--white);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--fire-red);
+            box-shadow: var(--shadow-red);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--blood-red) 0%, var(--fire-red) 100%);
+            color: var(--white);
+            border: 2px solid var(--fire-red);
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-fire);
+            text-shadow: 0 0 10px var(--white);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--dark-grey) 0%, rgba(220, 20, 60, 0.1) 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 10px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .contact-info::before {
+            content: '>> CONTACT PROTOCOLS';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--black);
+            color: var(--fire-red);
+            padding: 0 1rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--light-grey);
+            text-decoration: none;
+            padding: 1.5rem;
+            border: 2px solid var(--blood-red);
+            border-radius: 8px;
+            background: var(--black);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-link:hover {
+            color: var(--fire-red);
+            border-color: var(--fire-red);
+            box-shadow: var(--shadow-red);
+            transform: translateX(10px);
+        }
+
+        .contact-link i {
+            font-size: 2rem;
+            color: var(--fire-red);
+        }
+
+        /* FOOTER TAMARRO */
+        .footer {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            border-top: 2px solid var(--blood-red);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--light-grey);
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* RESPONSIVE - MIGLIORATO */
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .skills-container,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* EXTRA TAMARRO EFFECTS */
+        .cyber-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--fire-red);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            box-shadow: var(--shadow-red);
+            transition: transform 0.1s ease;
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blood-red), var(--fire-red));
+            z-index: 9998;
+            transition: width 0.3s ease;
+            box-shadow: var(--shadow-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- MATRIX BACKGROUND -->
+    <div class="matrix-bg"></div>
+    
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- CYBER CURSOR -->
+    <div class="cyber-cursor" id="cyberCursor"></div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">🔥 AM 🔥</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" data-key="nav-home">HOME</a></li>
+                    <li><a href="#about" class="nav-link" data-key="nav-about">PROFILO</a></li>
+                    <li><a href="#skills" class="nav-link" data-key="nav-skills">SKILLS</a></li>
+                    <li><a href="#projects" class="nav-link" data-key="nav-projects">PROGETTI</a></li>
+                    <li><a href="#experience" class="nav-link" data-key="nav-experience">ESPERIENZA</a></li>
+                    <li><a href="#contact" class="nav-link" data-key="nav-contact">CONTATTI</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="it">🇮🇹</button>
+                <button class="lang-btn" data-lang="en">🇬🇧</button>
+                <button class="lang-btn" data-lang="fr">🇫🇷</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="hacker-frame"></div>
+                <img src="img/profile.jpg" alt="Ayoub Mahfoud" class="profile-img">
+            </div>
+            <h1>AYOUB MAHFOUD</h1>
+            <p class="subtitle" data-key="hero-subtitle">🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥</p>
+            <p class="tagline" data-key="hero-tagline">"SEMPRE IN APPRENDIMENTO, SEMPRE IN CRESCITA"</p>
+            <a href="#projects" class="cta-button">
+                <span data-key="hero-cta">SCOPRI I MIEI PROGETTI</span>
+                <i class="fas fa-code"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <h2 class="section-title" data-key="about-title">🔥 CHI SONO 🔥</h2>
+        <div class="about-content">
+            <p data-key="about-text">
+                NOME: AYOUB MAHFOUD 🔥<br><br>
+                LIVELLO: STUDENTE INFORMATICA @ UPO UNIVERSITY 🚀<br>
+                FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>
+                BACKGROUND: Attraverso le mie esperienze in logistica e ristorazione, 
+                ho sviluppato skills di PROBLEM SOLVING avanzato e lavoro di squadra 
+                eccellente. Ora sono concentrato nell'apprendere e perfezionare 
+                TUTTE le competenze informatiche! 🔥<br><br>
+                OBIETTIVO: SPECIALIZZARMI IN CYBERSECURITY! 🛡️🚀
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+        <h2 class="section-title" data-key="skills-title">🔥 ARSENAL DIGITALE 🔥</h2>
+        <div class="skills-container">
+            <div class="skill-category" data-category="WEAPONS">
+                <h3 data-key="technical-skills">ARMI TECNICHE</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">JAVA</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JAVASCRIPT</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">NODE.JS</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">GIT</span>
+                    <span class="skill-tag">SQLITE</span>
+                    <span class="skill-tag" data-key="web-dev">WEB DEV</span>
+                    <span class="skill-tag" data-key="networks">NETWORKS</span>
+                    <span class="skill-tag" data-key="security">CYBERSECURITY</span>
+                    <span class="skill-tag" data-key="database">DATABASE</span>
+                </div>
+            </div>
+            <div class="skill-category" data-category="POWERS">
+                <h3 data-key="soft-skills">POTERI SPECIALI</h3>
+                <div class="skill-list">
+                    <span class="skill-tag" data-key="problem-solving">PROBLEM KILLER</span>
+                    <span class="skill-tag" data-key="time-management">TIME MASTER</span>
+                    <span class="skill-tag" data-key="communication">COMMUNICATION</span>
+                    <span class="skill-tag" data-key="adaptability">ADAPTABILITY</span>
+                    <span class="skill-tag" data-key="teamwork">TEAM SYNC</span>
+                    <span class="skill-tag" data-key="leadership">LEADERSHIP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+        <h2 class="section-title" data-key="projects-title">🔥 I MIEI PROGETTI 🔥</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+    <img src="img/cinebinge.png" alt="CineBinge Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+</div>
+                <div class="project-content">
+                    <h3 class="project-title">CINEBINGE</h3>
+                    <p class="project-description" data-key="cinebinge-description">
+                        🔥 STREAMING PLATFORM COMPLETA 🔥<br>
+                        Web app POTENTE ispirata alle piattaforme di streaming! 
+                        Sistema di ricerca films AVANZATO, autenticazione SICURA, 
+                        interfaccia MODERNA. Login system ROBUSTO, 
+                        gestione sessioni PERFETTA, area personale PREMIUM. 
+                        Design responsive che funziona ovunque! 🚀
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JAVASCRIPT</span>
+                        <span class="tech-tag">NODE.JS</span>
+                        <span class="tech-tag">SQLITE</span>
+                    </div>
+                    <a href="https://github.com/TheWolf0105/Piattaforma-Cinebinge-" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, var(--blood-red), var(--fire-red)); color: white; text-decoration: none; border-radius: 25px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease;">
+                        <i class="fab fa-github"></i> VEDI SU GITHUB
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    🚀
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title" data-key="future-project">PROSSIME MISSIONI</h3>
+                    <p class="project-description" data-key="future-project-description">
+                        🔥 PROSSIMI PROGETTI IN ARRIVO... 🔥<br>
+                        Spazio riservato per i prossimi progetti FANTASTICI! 
+                        Sempre in cerca di nuove sfide tecnologiche da RISOLVERE e 
+                        opportunità per migliorare le mie skills di programmazione 
+                        in progetti che faranno la differenza! 🚀
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag" data-key="coming-soon">COMING SOON...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+        <h2 class="section-title" data-key="experience-title">⚡ LA MIA ESPERIENZA ⚡</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h3 class="experience-title" data-key="pizza-chef">🔥 PIZZAIOLO PART-TIME 🔥</h3>
+                <p class="experience-description" data-key="pizza-description">
+                    🔥 GESTIONE PROFESSIONALE DELLA CUCINA! 🔥<br>
+                    Gestione EFFICIENTE della kitchen, controllo qualità ACCURATO, 
+                    rispetto dei tempi PRECISO. Skills di multitasking AVANZATE, 
+                    lavoro sotto pressione ECCELLENTE, attenzione ai dettagli MANIACALE. 
+                    Esperienza che mi ha insegnato disciplina e precisione! 🍕
+                </p>
+            </div>
+            <div class="experience-item">
+                <h3 class="experience-title">🚴 DELIVEROO & GLOVO RIDER 🚴</h3>
+                <p class="experience-description" data-key="delivery-description">
+                    ⚡ DELIVERY PROFESSIONALE E VELOCE! ⚡<br>
+                    Servizio delivery EFFICIENTE con focus sulla soddisfazione 
+                    clienti e ottimizzazione percorsi INTELLIGENTE. Gestione del tempo 
+                    OTTIMALE e problem solving in situazioni DINAMICHE. 
+                    Esperienza che ha migliorato le mie soft skills! 🚀
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h2 class="section-title" data-key="contact-title">🔥 CONNESSIONE DIRETTA 🔥</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xblkbzgg" method="POST">
+    <!-- Input nascosti per Formspree -->
+    <input type="hidden" name="_subject" value="Nuovo messaggio dal Portfolio di Ayoub">
+    <input type="hidden" name="_next" value="https://yoursite.com/thanks.html">
+    <!-- Protezione anti-spam -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <div class="form-group">
+        <label for="name" data-key="form-name">NOME CODICE</label>
+        <input type="text" id="name" name="name" required placeholder="Inserisci il tuo handle...">
+    </div>
+    <div class="form-group">
+        <label for="email" data-key="form-email">EMAIL CONTACT</label>
+        <input type="email" id="email" name="email" required placeholder="La tua email sicura...">
+    </div>
+    <div class="form-group">
+        <label for="message" data-key="form-message">MESSAGGIO CIFRATO</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Scrivi il tuo messaggio qui..."></textarea>
+    </div>
+    <button type="submit" class="submit-btn" data-key="form-submit">🔥 INVIA MESSAGGIO 🔥</button>
+</form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-links">
+                    <a href="mailto:ayoubmahfoud6@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <div data-key="email-label">EMAIL</div>
+                            <div>ayoubmahfoud6@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ayoub-mahfoud-08089537a/" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <div>LINKEDIN</div>
+                            <div>/in/ayoub-mahfoud</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/TheWolf0105" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <div>GITHUB PROFILE</div>
+                            <div>/TheWolf0105</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p data-key="footer-text">🔥 2024 AYOUB MAHFOUD - STUDENTE INFORMATICA - ALL RIGHTS RESERVED 🔥</p>
+    </footer>
+
+    <script>
+        // TRADUZIONI FINALI - VERSIONE CORRETTA
+        const translations = {
+            it: {
+                'nav-home': 'HOME',
+                'nav-about': 'PROFILO',
+                'nav-skills': 'SKILLS',
+                'nav-projects': 'PROGETTI',
+                'nav-experience': 'ESPERIENZA',
+                'nav-contact': 'CONTATTI',
+                'hero-subtitle': '🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥',
+                'hero-tagline': '"SEMPRE IN APPRENDIMENTO, SEMPRE IN CRESCITA"',
+                'hero-cta': 'SCOPRI I MIEI PROGETTI',
+                'about-title': '🔥 CHI SONO 🔥',
+                'about-text': 'NOME: AYOUB MAHFOUD 🔥<br><br>LIVELLO: STUDENTE INFORMATICA @ UPO UNIVERSITY 🚀<br>FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>BACKGROUND: Attraverso le mie esperienze in logistica e ristorazione, ho sviluppato skills di PROBLEM SOLVING avanzato e lavoro di squadra eccellente. Ora sono concentrato nell\'apprendere e perfezionare TUTTE le competenze informatiche! 🔥<br><br>OBIETTIVO: SPECIALIZZARMI IN CYBERSECURITY! 🛡️🚀',
+                'skills-title': '🔥 ARSENAL DIGITALE 🔥',
+                'technical-skills': 'ARMI TECNICHE',
+                'soft-skills': 'POTERI SPECIALI',
+                'web-dev': 'WEB DEV',
+                'networks': 'NETWORKS',
+                'security': 'CYBERSECURITY',
+                'database': 'DATABASE',
+                'problem-solving': 'PROBLEM KILLER',
+                'time-management': 'TIME MASTER',
+                'communication': 'COMMUNICATION',
+                'adaptability': 'ADAPTABILITY',
+                'teamwork': 'TEAM SYNC',
+                'leadership': 'LEADERSHIP',
+                'projects-title': '🔥 I MIEI PROGETTI 🔥',
+                'cinebinge-description': '🔥 STREAMING PLATFORM COMPLETA 🔥<br>Web app POTENTE ispirata alle piattaforme di streaming! Sistema di ricerca films AVANZATO, autenticazione SICURA, interfaccia MODERNA. Login system ROBUSTO, gestione sessioni PERFETTA, area personale PREMIUM. Design responsive che funziona ovunque! 🚀',
+                'future-project': 'PROSSIME MISSIONI',
+                'future-project-description': '🔥 PROSSIMI PROGETTI IN ARRIVO... 🔥<br>Spazio riservato per i prossimi progetti FANTASTICI! Sempre in cerca di nuove sfide tecnologiche da RISOLVERE e opportunità per migliorare le mie skills di programmazione in progetti che faranno la differenza! 🚀',
+                'coming-soon': 'COMING SOON...',
+                'experience-title': '⚡ LA MIA ESPERIENZA ⚡',
+                'pizza-chef': '🔥 PIZZAIOLO PART-TIME 🔥',
+                'pizza-description': '🔥 GESTIONE PROFESSIONALE DELLA CUCINA! 🔥<br>Gestione EFFICIENTE della kitchen, controllo qualità ACCURATO, rispetto dei tempi PRECISO. Skills di multitasking AVANZATE, lavoro sotto pressione ECCELLENTE, attenzione ai dettagli MANIACALE. Esperienza che mi ha insegnato disciplina e precisione! 🍕',
+                'delivery-description': '⚡ DELIVERY PROFESSIONALE E VELOCE! ⚡<br>Servizio delivery EFFICIENTE con focus sulla soddisfazione clienti e ottimizzazione percorsi INTELLIGENTE. Gestione del tempo OTTIMALE e problem solving in situazioni DINAMICHE. Esperienza che ha migliorato le mie soft skills! 🚀',
+                'contact-title': '🔥 CONNESSIONE DIRETTA 🔥',
+                'form-name': 'NOME CODICE',
+                'form-email': 'EMAIL CONTACT',
+                'form-message': 'MESSAGGIO CIFRATO',
+                'form-submit': '🔥 INVIA MESSAGGIO 🔥',
+                'email-label': 'EMAIL',
+                'footer-text': '🔥 2024 AYOUB MAHFOUD - STUDENTE INFORMATICA - ALL RIGHTS RESERVED 🔥'
+            },
+            en: {
+                'nav-home': 'HOME',
+                'nav-about': 'PROFILE',
+                'nav-skills': 'SKILLS',
+                'nav-projects': 'PROJECTS',
+                'nav-experience': 'EXPERIENCE',
+                'nav-contact': 'CONTACT',
+                'hero-subtitle': '🔥 DEVELOPER • CODER • TECH ENTHUSIAST 🔥',
+                'hero-tagline': '"ALWAYS LEARNING, ALWAYS GROWING"',
+                'hero-cta': 'DISCOVER MY PROJECTS',
+                'about-title': '🔥 WHO I AM 🔥',
+                'about-text': 'NAME: AYOUB MAHFOUD 🔥<br><br>LEVEL: COMPUTER SCIENCE STUDENT @ UPO UNIVERSITY 🚀<br>FOCUS: SOFTWARE DEVELOPMENT • WEB DEVELOPMENT • CYBERSECURITY<br><br>BACKGROUND: Through my experiences in logistics and food service, I developed advanced PROBLEM SOLVING skills and excellent teamwork. Now I\'m focused on learning and perfecting ALL computer science skills! 🔥<br><br>GOAL: SPECIALIZE IN CYBERSECURITY! 🛡️🚀',
+                'skills-title': '🔥 DIGITAL ARSENAL 🔥',
+                'technical-skills': 'TECHNICAL WEAPONS',
+                'soft-skills': 'SPECIAL POWERS',
+                'web-dev': 'WEB DEV',
+                'networks': 'NETWORKS',
+                'security': 'CYBERSECURITY',
+                'database': 'DATABASE',
+                'problem-solving': 'PROBLEM KILLER',
+                'time-management': 'TIME MASTER',
+                'communication': 'COMMUNICATION',
+                'adaptability': 'ADAPTABILITY',
+                'teamwork': 'TEAM SYNC',
+                'leadership': 'LEADERSHIP',
+                'projects-title': '🔥 MY PROJECTS 🔥',
+                'cinebinge-description': '🔥 COMPLETE STREAMING PLATFORM 🔥<br>POWERFUL web app inspired by streaming platforms! ADVANCED movie search system, SECURE authentication, MODERN interface. ROBUST login system, PERFECT session management, PREMIUM personal area. Responsive design that works everywhere! 🚀',
+                'future-project': 'NEXT MISSIONS',
+                'future-project-description': '🔥 UPCOMING PROJECTS... 🔥<br>Space reserved for upcoming FANTASTIC projects! Always looking for new technological challenges to SOLVE and opportunities to improve my programming skills in projects that will make a difference! 🚀',
+                'coming-soon': 'COMING SOON...',
+                'experience-title': '⚡ MY EXPERIENCE ⚡',
+                'pizza-chef': '🔥 PART-TIME PIZZA CHEF 🔥',
+                'pizza-description': '🔥 PROFESSIONAL KITCHEN MANAGEMENT! 🔥<br>EFFICIENT kitchen management, ACCURATE quality control, PRECISE timing. ADVANCED multitasking skills, EXCELLENT work under pressure, MANIACAL attention to detail. Experience that taught me discipline and precision! 🍕',
+                'delivery-description': '⚡ PROFESSIONAL AND FAST DELIVERY! ⚡<br>EFFICIENT delivery service with focus on customer satisfaction and INTELLIGENT route optimization. OPTIMAL time management and problem solving in DYNAMIC situations. Experience that improved my soft skills! 🚀',
+                'contact-title': '🔥 DIRECT CONNECTION 🔥',
+                'form-name': 'CODE NAME',
+                'form-email': 'EMAIL CONTACT',
+                'form-message': 'ENCRYPTED MESSAGE',
+                'form-submit': '🔥 SEND MESSAGE 🔥',
+                'email-label': 'EMAIL',
+                'footer-text': '🔥 2024 AYOUB MAHFOUD - COMPUTER SCIENCE STUDENT - ALL RIGHTS RESERVED 🔥'
+            },
+            fr: {
+                'nav-home': 'ACCUEIL',
+                'nav-about': 'PROFIL',
+                'nav-skills': 'COMPÉTENCES',
+                'nav-projects': 'PROJETS',
+                'nav-experience': 'EXPÉRIENCE',
+                'nav-contact': 'CONTACT',
+                'hero-subtitle': '🔥 DÉVELOPPEUR • CODEUR • PASSIONNÉ TECH 🔥',
+                'hero-tagline': '"TOUJOURS EN APPRENTISSAGE, TOUJOURS EN CROISSANCE"',
+                'hero-cta': 'DÉCOUVRIR MES PROJETS',
+                'about-title': '🔥 QUI JE SUIS 🔥',
+                'about-text': 'NOM: AYOUB MAHFOUD 🔥<br><br>NIVEAU: ÉTUDIANT INFORMATIQUE @ UNIVERSITÉ UPO 🚀<br>FOCUS: DÉVELOPPEMENT LOGICIEL • DÉVELOPPEMENT WEB • CYBERSÉCURITÉ<br><br>BACKGROUND: À travers mes expériences en logistique et restauration, j\'ai développé des compétences de RÉSOLUTION DE PROBLÈMES avancées et un excellent travail d\'équipe. Maintenant je me concentre sur l\'apprentissage et le perfectionnement de TOUTES les compétences informatiques! 🔥<br><br>OBJECTIF: ME SPÉCIALISER EN CYBERSÉCURITÉ! 🛡️🚀',
+                'skills-title': '🔥 ARSENAL NUMÉRIQUE 🔥',
+                'technical-skills': 'ARMES TECHNIQUES',
+                'soft-skills': 'POUVOIRS SPÉCIAUX',
+                'web-dev': 'DEV WEB',
+                'networks': 'RÉSEAUX',
+                'security': 'CYBERSÉCURITÉ',
+                'database': 'BASE DONNÉES',
+                'problem-solving': 'TUEUR PROBLÈMES',
+                'time-management': 'MAÎTRE TEMPS',
+                'communication': 'COMMUNICATION',
+                'adaptability': 'ADAPTABILITÉ',
+                'teamwork': 'SYNC ÉQUIPE',
+                'leadership': 'LEADERSHIP',
+                'projects-title': '🔥 MES PROJETS 🔥',
+                'cinebinge-description': '🔥 PLATEFORME STREAMING COMPLÈTE 🔥<br>App web PUISSANTE inspirée des plateformes streaming! Système recherche films AVANCÉ, authentification SÉCURISÉE, interface MODERNE. Système login ROBUSTE, gestion sessions PARFAITE, espace personnel PREMIUM. Design responsive qui fonctionne partout! 🚀',
+                'future-project': 'PROCHAINES MISSIONS',
+                'future-project-description': '🔥 PROJETS À VENIR... 🔥<br>Espace réservé pour les prochains projets FANTASTIQUES! Toujours en quête de nouveaux défis technologiques à RÉSOUDRE et opportunités pour améliorer mes compétences de programmation dans des projets qui feront la différence! 🚀',
+                'coming-soon': 'BIENTÔT DISPONIBLE...',
+                'experience-title': '⚡ MON EXPÉRIENCE ⚡',
+                'pizza-chef': '🔥 PIZZAIOLO À TEMPS PARTIEL 🔥',
+                'pizza-description': '🔥 GESTION PROFESSIONNELLE CUISINE! 🔥<br>Gestion EFFICACE de la cuisine, contrôle qualité PRÉCIS, respect timing EXACT. Compétences multitâche AVANCÉES, travail sous pression EXCELLENT, attention détails MANIAQUE. Expérience qui m\'a appris discipline et précision! 🍕',
+                'delivery-description': '⚡ LIVRAISON PROFESSIONNELLE ET RAPIDE! ⚡<br>Service livraison EFFICACE avec focus sur satisfaction client et optimisation trajets INTELLIGENTE. Gestion temps OPTIMALE et résolution problèmes en situations DYNAMIQUES. Expérience qui a amélioré mes soft skills! 🚀',
+                'contact-title': '🔥 CONNEXION DIRECTE 🔥',
+                'form-name': 'NOM DE CODE',
+                'form-email': 'CONTACT EMAIL',
+                'form-message': 'MESSAGE CHIFFRÉ',
+                'form-submit': '🔥 ENVOYER MESSAGE 🔥',
+                'email-label': 'EMAIL',
+                'footer-text': '🔥 2024 AYOUB MAHFOUD - ÉTUDIANT INFORMATIQUE - TOUS DROITS RÉSERVÉS 🔥'
+            }
+        };
+
+        // SISTEMA LINGUA FUNZIONANTE
+        let currentLang = 'it';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            console.log('Cambio lingua a:', lang);
+            
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM caricato, inizializzando eventi lingua...');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    //e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    console.log('Cliccato bottone lingua:', lang);
+                    changeLanguage(lang);
+                });
+            });
+        });
+
+        // CYBER CURSOR
+        const cursor = document.getElementById('cyberCursor');
+        if (cursor) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+        }
+
+        // SCROLL INDICATOR
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const indicator = document.getElementById('scrollIndicator');
+            if (indicator) {
+                indicator.style.width = scrolled + '%';
+            }
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // FORM SUBMISSION - VERSIONE CORRETTA PER FORMSPREE
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // NON bloccare il submit se usi Formspree reale
+            // e.preventDefault(); // COMMENTA QUESTA RIGA per Formspree
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Solo animazione visiva, non bloccare l'invio
+            submitBtn.innerHTML = '🔥 INVIO IN CORSO... 🔥';
+            submitBtn.disabled = true;
+            
+            // Se vuoi fare una demo senza Formspree, decomenta la riga sotto
+            e.preventDefault();
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '✅ MESSAGGIO INVIATO! ✅';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // KONAMI CODE EASTER EGG
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                document.body.style.animation = 'titleGlitch 0.5s infinite';
+                alert('🔥 KONAMI CODE ACTIVATED! DEVELOPER MODE UNLOCKED! 🔥');
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 3000);
+            }
+        });
+
+        // CONSOLE DEVELOPER MESSAGE
+        console.log(`
+        🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        🔥                                     🔥
+        🔥    AYOUB MAHFOUD DEVELOPER PORTFOLIO🔥
+        🔥           ACCESS GRANTED            🔥
+        🔥                                     🔥
+        🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        
+        🚀 WELCOME TO MY CODE UNIVERSE 🚀
+        `);
+</script>
+</body>
+</html>
